@@ -35,3 +35,15 @@ class LinkedListTest(TestCase):
         self.assertEqual(l.head, n2)
         l.remove()
         self.assertEqual(l.head, n1)
+
+    def test_size_of_empty_list_is_zero(self):
+        l = LinkedList()
+        self.assertEqual(l.size(), 0)
+
+    def test_size_of_list_with_two_nodes_is_two(self):
+        l = LinkedList()
+        n1 = Node(1)
+        n2 = Node(2)
+        l.push(1)
+        l.push(2)
+        self.assertEqual(l.size(), 2)

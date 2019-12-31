@@ -22,6 +22,16 @@ class LinkedList:
             raise IndexError('cannot remove from empty list')
         self.head = self.head.next
 
-    # def size
+    def size(self):
+        if not self.head:
+            return 0
+        count = 1
+        current = self.head
+        while current.next:
+            count += 1
+            current = current.next
+        return count
+
+
     # def append
     # def pop
