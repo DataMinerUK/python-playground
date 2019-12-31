@@ -12,7 +12,12 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def append(self, data):
+    def push(self, data):
         node = Node(data)
         node.next = self.head
         self.head = node
+
+    # def append
+    # def size
+    # def pop
+    # def remove
