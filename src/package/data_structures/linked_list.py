@@ -12,7 +12,6 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-
     def push(self, data):
         node = Node(data)
         node.next = self.head
@@ -39,10 +38,19 @@ class LinkedList:
             tail = self.__get_tail()
             tail.next = node
 
+    def pop(self):
+        if not self.head:
+            raise IndexError('cannot pop from empty list')
+        if not self.head.next:
+            self.head = None
+        else:
+            current = self.head
+            while current.next and current.next.next:
+                current = current.next
+            current.next = None
+
     def __get_tail(self):
         tail = self.head
-        if tail:
-            while tail.next:
-                tail = tail.next
+        while tail.next:
+            tail = tail.next
         return tail
-    # def pop
