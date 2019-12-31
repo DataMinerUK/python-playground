@@ -11,7 +11,7 @@ class LinkedListTest(TestCase):
         l.push("d")
         self.assertEqual(l.head, n)
 
-    def test_push_to_non_empty_list(self):
+    def test_push_to_front_of_non_empty_list(self):
         l = LinkedList()
         n1 = Node(1)
         n2 = Node(2)
@@ -42,8 +42,21 @@ class LinkedListTest(TestCase):
 
     def test_size_of_list_with_two_nodes_is_two(self):
         l = LinkedList()
-        n1 = Node(1)
-        n2 = Node(2)
         l.push(1)
         l.push(2)
         self.assertEqual(l.size(), 2)
+
+    def test_append_to_back_of_empty_list(self):
+        l = LinkedList()
+        n1 = Node(1)
+        l.append(1)
+        self.assertEqual(l.head, n1)
+
+    def test_append_to_back_of_non_empty_list(self):
+        l = LinkedList()
+        n1 = Node(1)
+        n2 = Node(2)
+        l.append(1)
+        self.assertEqual(l.head, n1)
+        l.append(2)
+        self.assertEqual(l.head.next, n2)

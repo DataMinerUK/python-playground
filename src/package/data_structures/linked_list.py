@@ -12,6 +12,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+
     def push(self, data):
         node = Node(data)
         node.next = self.head
@@ -23,15 +24,25 @@ class LinkedList:
         self.head = self.head.next
 
     def size(self):
-        if not self.head:
-            return 0
-        count = 1
+        count = 0
         current = self.head
-        while current.next:
+        while current:
             count += 1
             current = current.next
         return count
 
+    def append(self, data):
+        node = Node(data)
+        if not self.head:
+            self.head = node
+        else:
+            tail = self.__get_tail()
+            tail.next = node
 
-    # def append
+    def __get_tail(self):
+        tail = self.head
+        if tail:
+            while tail.next:
+                tail = tail.next
+        return tail
     # def pop
