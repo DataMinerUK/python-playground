@@ -17,7 +17,11 @@ class LinkedList:
         node.next = self.head
         self.head = node
 
-    # def append
+    def remove(self):
+        if not self.head:
+            raise IndexError('cannot remove from empty list')
+        self.head = self.head.next
+
     # def size
+    # def append
     # def pop
-    # def remove
