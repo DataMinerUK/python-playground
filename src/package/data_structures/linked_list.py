@@ -9,8 +9,8 @@ class Node:
 
 class LinkedList:
 
-    def __init__(self):
-        self.head = None
+    def __init__(self, head=None):
+        self.head = Node(head) if head else head
 
     def push(self, data):
         node = Node(data)
