@@ -41,6 +41,7 @@ class LinkedList:
     def pop(self):
         if not self.head:
             raise IndexError('cannot pop from empty list')
+        tail = self.__get_tail()
         if not self.head.next:
             self.head = None
         else:
@@ -48,9 +49,16 @@ class LinkedList:
             while current.next and current.next.next:
                 current = current.next
             current.next = None
+        return tail
 
     def __get_tail(self):
         tail = self.head
         while tail.next:
             tail = tail.next
         return tail
+
+def reverse(linked_list):
+    pass
+
+# def get_n()
+# def get_middle()
