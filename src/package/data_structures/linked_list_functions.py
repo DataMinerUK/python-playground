@@ -10,3 +10,12 @@ def reverse(linked_list):
             current.next = linked_list.pop()
             current = current.next
         return reversed
+
+def get_nth(n, linked_list):
+    if linked_list.size() - 1 < n :
+        raise IndexError('Index out of range')
+    current = linked_list.head
+    for i in range(n):
+        current = current.next
+    return current
+#def get_middle(linked_list):
