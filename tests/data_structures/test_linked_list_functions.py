@@ -27,3 +27,17 @@ class LinkedListFunctionsTest(unittest.TestCase):
         l.append(2)
         self.assertEqual(get_nth(0, l), Node(1))
         self.assertEqual(get_nth(1, l), Node(2))
+
+    def test_middle_empty_list_out_of_range(self):
+        l = LinkedList()
+        with pytest.raises(IndexError) as index_error:
+            get_middle(l)
+        assert 'Index out of range' in str(index_error.value)
+
+    def test_middle_odd_sized_list(self):
+        l = LinkedList(1)
+        l.append(2)
+        l.append(3)
+        l.append(4)
+        l.append(5)
+        self.assertEqual(get_middle(l), Node(3))

@@ -18,4 +18,13 @@ def get_nth(n, linked_list):
     for i in range(n):
         current = current.next
     return current
-#def get_middle(linked_list):
+
+def get_middle(linked_list):
+    length = linked_list.size()
+    if length < 1:
+        raise IndexError('Index out of range')
+    middle = length/2
+    current = linked_list.head
+    for i in range(int(middle)):
+        current = current.next
+    return current
