@@ -16,13 +16,10 @@ def bubble_sort(array):
     return array
 
 def insertion_sort(array):
-    n = len(array)
-    def helper(array,n):
-        if n <= 1:
-            return
-        helper(array, n-1)
-        j = n-1
-        while j >= 1 and array[j] > array[j+1]:
-            array[j], array[j+1] = array[j+1], array[j]
-            j -= 1
-        return array
+    for i in range(1, len(array)):
+        key = arr[i]
+        j = i-1
+        while j >= 0 and key < array[j] :
+                array[j + 1] = array[j]
+                j -= 1
+        array[j + 1] = key
